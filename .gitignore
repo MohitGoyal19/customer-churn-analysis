@@ -18,7 +18,7 @@ env/
 # This ignores the entire data, logs, and user_data folders.
 data/
 logs/
-user_data/
+# user_data/
 
 # --- DVC Exception ---
 # IMPORTANT: This rule UN-ignores the DVC pointer file. This is crucial.
