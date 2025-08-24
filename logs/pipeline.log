@@ -752,3 +752,222 @@ Traceback (most recent call last):
     raise CalledProcessError(retcode, process.args,
                              output=stdout, stderr=stderr)
 subprocess.CalledProcessError: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 253.
+2025-08-24 07:45:24,472 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:45:24,472 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:45:24,538 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:45:24,538 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:45:24,612 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:45:24,612 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:45:24,614 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:45:24,677 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:45:24,679 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:45:24,734 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:45:24,736 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:45:24,739 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:45:24,794 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:45:24,795 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:45:26,003 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:45:26,041 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:45:26,047 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:45:26,141 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:45:27,305 - [INFO] - ChurnPipeline - Starting model training task.
+2025-08-24 07:45:28,025 - [INFO] - ChurnPipeline - Data split into training (8101 rows) and testing (2026 rows).
+2025-08-24 07:45:28,875 - [INFO] - ChurnPipeline - Model evaluation metrics: {'accuracy': 0.9407699901283317, 'precision': 0.9288702928870293, 'recall': 0.683076923076923, 'f1_score': 0.7872340425531915}
+2025-08-24 07:45:32,860 - [INFO] - ChurnPipeline - Model training complete and logged to MLflow.
+2025-08-24 07:45:32,863 - [INFO] - ChurnPipeline -  --- Starting End-to-End Churn Prediction Pipeline ---
+2025-08-24 07:45:32,863 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:45:32,863 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:45:32,917 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:45:32,917 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:45:32,969 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:45:32,969 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:45:32,971 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:45:33,028 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:45:33,030 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:45:33,073 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:45:33,075 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:45:33,078 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:45:33,136 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:45:33,136 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:45:33,138 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:45:33,168 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:45:33,173 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:45:33,189 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:45:33,190 - [INFO] - ChurnPipeline - Versioning data with DVC...
+2025-08-24 07:45:34,018 - [ERROR] - ChurnPipeline - --- Pipeline Failed: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 253. ---
+Traceback (most recent call last):
+  File "C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\src\run_pipeline.py", line 25, in main
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+    	[sys.executable, "-m", "dvc", "add", "data/03 Features/features.parquet"],
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    	check=True
+     ^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2032.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 253.
+2025-08-24 07:45:59,984 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:45:59,985 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:46:00,046 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:46:00,046 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:46:00,123 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:46:00,123 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:46:00,126 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:46:00,189 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:46:00,191 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:46:00,242 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:46:00,246 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:46:00,249 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:46:00,311 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:46:00,311 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:46:00,918 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:46:00,950 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:46:00,955 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:46:00,991 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:46:01,751 - [INFO] - ChurnPipeline - Starting model training task.
+2025-08-24 07:46:02,175 - [INFO] - ChurnPipeline - Data split into training (8101 rows) and testing (2026 rows).
+2025-08-24 07:46:03,084 - [INFO] - ChurnPipeline - Model evaluation metrics: {'accuracy': 0.9407699901283317, 'precision': 0.9288702928870293, 'recall': 0.683076923076923, 'f1_score': 0.7872340425531915}
+2025-08-24 07:46:07,102 - [INFO] - ChurnPipeline - Model training complete and logged to MLflow.
+2025-08-24 07:46:07,105 - [INFO] - ChurnPipeline -  --- Starting End-to-End Churn Prediction Pipeline ---
+2025-08-24 07:46:07,105 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:46:07,105 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:46:07,160 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:46:07,160 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:46:07,233 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:46:07,233 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:46:07,235 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:46:07,292 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:46:07,294 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:46:07,336 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:46:07,338 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:46:07,341 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:46:07,398 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:46:07,398 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:46:07,400 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:46:07,430 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:46:07,435 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:46:07,451 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:46:07,451 - [INFO] - ChurnPipeline - Versioning data with DVC...
+2025-08-24 07:46:10,528 - [ERROR] - ChurnPipeline - --- Pipeline Failed: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 1. ---
+Traceback (most recent call last):
+  File "C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\src\run_pipeline.py", line 25, in main
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+    	[sys.executable, "-m", "dvc", "add", "data/03 Features/features.parquet"],
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    	check=True
+     ^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2032.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 1.
+2025-08-24 07:47:56,645 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:47:56,645 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:47:56,703 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:47:56,704 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:47:56,762 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:47:56,762 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:47:56,764 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:47:56,824 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:47:56,827 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:47:56,872 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:47:56,874 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:47:56,877 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:47:56,932 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:47:56,933 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:47:57,518 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:47:57,554 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:47:57,560 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:47:57,597 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:47:58,353 - [INFO] - ChurnPipeline - Starting model training task.
+2025-08-24 07:47:58,747 - [INFO] - ChurnPipeline - Data split into training (8101 rows) and testing (2026 rows).
+2025-08-24 07:47:59,598 - [INFO] - ChurnPipeline - Model evaluation metrics: {'accuracy': 0.9407699901283317, 'precision': 0.9288702928870293, 'recall': 0.683076923076923, 'f1_score': 0.7872340425531915}
+2025-08-24 07:48:03,638 - [INFO] - ChurnPipeline - Model training complete and logged to MLflow.
+2025-08-24 07:48:03,641 - [INFO] - ChurnPipeline -  --- Starting End-to-End Churn Prediction Pipeline ---
+2025-08-24 07:48:03,641 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:48:03,641 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:48:03,696 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:48:03,696 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:48:03,748 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:48:03,748 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:48:03,750 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:48:03,807 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:48:03,808 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:48:03,849 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:48:03,851 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:48:03,854 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:48:03,910 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:48:03,910 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:48:03,912 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:48:03,941 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:48:03,945 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:48:03,962 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:48:03,962 - [INFO] - ChurnPipeline - Versioning data with DVC...
+2025-08-24 07:48:05,811 - [ERROR] - ChurnPipeline - --- Pipeline Failed: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 1. ---
+Traceback (most recent call last):
+  File "C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\run_pipeline.py", line 25, in main
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+    	[sys.executable, "-m", "dvc", "add", "data/03 Features/features.parquet"],
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    	check=True
+     ^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2032.0_x64__qbz5n2kfra8p0\Lib\subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['C:\\Users\\great\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe', '-m', 'dvc', 'add', 'data/03 Features/features.parquet']' returned non-zero exit status 1.
+2025-08-24 07:52:35,512 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:52:35,513 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:52:35,578 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:52:35,578 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:52:35,659 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:52:35,660 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:52:35,662 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:52:35,729 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:52:35,731 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:52:35,786 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:52:35,789 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:52:35,792 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:52:35,850 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:52:35,850 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:52:36,960 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:52:36,995 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:52:37,000 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:52:37,084 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:52:38,179 - [INFO] - ChurnPipeline - Starting model training task.
+2025-08-24 07:52:39,002 - [INFO] - ChurnPipeline - Data split into training (8101 rows) and testing (2026 rows).
+2025-08-24 07:52:39,924 - [INFO] - ChurnPipeline - Model evaluation metrics: {'accuracy': 0.9407699901283317, 'precision': 0.9288702928870293, 'recall': 0.683076923076923, 'f1_score': 0.7872340425531915}
+2025-08-24 07:52:44,298 - [INFO] - ChurnPipeline - Model training complete and logged to MLflow.
+2025-08-24 07:52:44,302 - [INFO] - ChurnPipeline -  --- Starting End-to-End Churn Prediction Pipeline ---
+2025-08-24 07:52:44,302 - [INFO] - ChurnPipeline - Starting data ingestion task.
+2025-08-24 07:52:44,302 - [INFO] - ChurnPipeline - Reading customer data from C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\user_data\credit_info.csv
+2025-08-24 07:52:44,357 - [INFO] - ChurnPipeline - Successfully ingested 10127 customer records from CSV.
+2025-08-24 07:52:44,357 - [INFO] - ChurnPipeline - Connecting to MongoDB at mongodb://localhost:27017/...
+2025-08-24 07:52:44,427 - [INFO] - ChurnPipeline - Successfully ingested 10127 service records from MongoDB.
+2025-08-24 07:52:44,428 - [INFO] - ChurnPipeline - Data ingestion task completed.
+2025-08-24 07:52:44,429 - [INFO] - ChurnPipeline - Starting data validation task.
+2025-08-24 07:52:44,490 - [INFO] - ChurnPipeline - Data validation task completed successfully.
+2025-08-24 07:52:44,492 - [INFO] - ChurnPipeline - Starting data preparation task.
+2025-08-24 07:52:44,534 - [INFO] - ChurnPipeline - Successfully merged datasets. Shape of merged data: (10127, 21)
+2025-08-24 07:52:44,537 - [INFO] - ChurnPipeline - Standardized all column names to snake_case.
+2025-08-24 07:52:44,540 - [INFO] - ChurnPipeline - Processed target variable 'attrition_flag'.
+2025-08-24 07:52:44,602 - [INFO] - ChurnPipeline - Cleaned and standardized data saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\02 Clean\clean_data_2025-08-24.csv
+2025-08-24 07:52:44,603 - [INFO] - ChurnPipeline - Data preparation task completed.
+2025-08-24 07:52:44,605 - [INFO] - ChurnPipeline - Building features task started.
+2025-08-24 07:52:44,637 - [INFO] - ChurnPipeline - Performed one-hot encoding on columns: ['education_level', 'gender', 'income_category', 'marital_status', 'card_category']
+2025-08-24 07:52:44,643 - [INFO] - ChurnPipeline - Performed scaling on 15 numerical features.
+2025-08-24 07:52:44,661 - [INFO] - ChurnPipeline - Feature dataset built and saved to C:\Users\great\OneDrive\Documents\Work\BITS\DMML\customer-churn-pipeline\data\03 Features\features.parquet
+2025-08-24 07:52:44,662 - [INFO] - ChurnPipeline - Versioning data with DVC...
+2025-08-24 07:52:46,448 - [INFO] - ChurnPipeline - Data versioned.
+2025-08-24 07:52:46,448 - [INFO] - ChurnPipeline - Starting model training task.
+2025-08-24 07:52:46,517 - [INFO] - ChurnPipeline - Data split into training (8101 rows) and testing (2026 rows).
+2025-08-24 07:52:47,450 - [INFO] - ChurnPipeline - Model evaluation metrics: {'accuracy': 0.9407699901283317, 'precision': 0.9288702928870293, 'recall': 0.683076923076923, 'f1_score': 0.7872340425531915}
+2025-08-24 07:52:50,429 - [INFO] - ChurnPipeline - Model training complete and logged to MLflow.
+2025-08-24 07:52:50,432 - [INFO] - ChurnPipeline - --- Pipeline Execution Finished Successfully! ---

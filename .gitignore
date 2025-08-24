@@ -1,0 +1,51 @@
+# --- Python Artifacts ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+build/
+dist/
+*.egg-info/
+
+# --- Virtual Environments ---
+# A good practice is to name your venv 'venv' or '.venv'
+venv/
+.venv/
+env/
+
+# --- Project Data, Logs, and User-provided data ---
+# We use DVC to track important data files, not Git.
+# This ignores the entire data, logs, and user_data folders.
+data/
+logs/
+user_data/
+
+# --- DVC Exception ---
+# IMPORTANT: This rule UN-ignores the DVC pointer file. This is crucial.
+# It tells Git to track the pointer, but not the actual data file.
+!data/03 Features/features.parquet.dvc
+# You might also want a .gitignore file inside the data folder itself.
+# This rule keeps that file.
+!data/.gitignore
+
+# --- ML & Data Tooling Artifacts ---
+# MLflow tracking directory
+mlruns/
+# Feast local databases
+feature_repo/data/
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# --- Secrets ---
+# NEVER commit environment files with credentials
+.env
+
+# --- IDE / Editor Configuration ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- OS-specific Files ---
+.DS_Store
+Thumbs.db
