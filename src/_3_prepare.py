@@ -9,7 +9,7 @@ def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
 	'''Converts all column names to snake_case.'''
 	new_cols = {}
 	for col in df.columns:
-		if col == 'CLIETNUM':
+		if col == 'CLIENTNUM':
 			new_cols[col] = 'client_no'
 		
 		else:

@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 import mlflow
 import mlflow.sklearn
 
@@ -57,7 +57,8 @@ def train_model():
 					'accuracy': accuracy_score(y_test, y_pred),
 					'precision': precision_score(y_test, y_pred),
 					'recall': recall_score(y_test, y_pred),
-					'f1_score': f1_score(y_test, y_pred)
+					'f1_score': f1_score(y_test, y_pred),
+					'auc-roc_score': roc_auc_score(y_test, y_pred)
 				}
 				logger.info(f'Metrics for {model_name}: {metrics}')
 
@@ -75,7 +76,3 @@ def train_model():
 				)
 
 	logger.info('Multi-model training task completed.')
-
-
-if __name__ == '__main__':
-	train_model()

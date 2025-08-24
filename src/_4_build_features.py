@@ -13,8 +13,8 @@ def build_features(date_str: str):
 	df = pd.read_csv(clean_data_path)
 
 	# Drop the original client identifier as it's not a feature
-	if 'clientnum' in df.columns:
-		df = df.drop(columns=['clientnum'])
+	if 'client_no' in df.columns:
+		df = df.drop(columns=['client_no'])
 
 	# One-Hot Encode categorical variables
 	categorical_cols = df.select_dtypes(include=['object', 'category']).columns.tolist()
