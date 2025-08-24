@@ -75,7 +75,7 @@ Follow these steps to set up the project environment on your local machine.
     ```
 
 6.  **Place Source Data**
-    * Place your customer account data CSV file inside the `user_data/` directory and ensure it's named `account_data.csv`.
+    * Place your customer account data CSV file inside the `user_data/` directory and ensure it's named `credit_info.csv`.
 
 7.  **Initialize DVC**
     ```bash
@@ -85,7 +85,7 @@ Follow these steps to set up the project environment on your local machine.
 ## How to Run the Pipeline
 
 **1. Configure the Target Column**
-Before running, open `src/config.py` and ensure the `RAW_TARGET_COLUMN` variable is set to the exact name of the churn/attrition column in your `account_data.csv` file.
+Before running, open `src/config.py` and ensure the `RAW_TARGET_COLUMN` variable is set to the exact name of the churn/attrition column in your `credit_info.csv` file.
 
 **2. Execute the Pipeline**
 Run the master script from the root of the project directory:
