@@ -1,6 +1,6 @@
 # End-to-End MLOps Pipeline for Customer Churn Prediction
 
-![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)
+![Python Version](https://img.shields.io/badge/python-3.13+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![MLflow](https://img.shields.io/badge/MLflow-2.12-orange)
 ![DVC](https://img.shields.io/badge/DVC-3.49-blueviolet)
