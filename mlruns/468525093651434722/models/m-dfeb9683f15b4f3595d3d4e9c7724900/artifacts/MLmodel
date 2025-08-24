@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/great/OneDrive/Documents/Work/BITS/DMML/customer-churn-pipeline/mlruns/468525093651434722/models/m-dfeb9683f15b4f3595d3d4e9c7724900/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.1
+mlflow_version: 3.3.1
+model_id: m-dfeb9683f15b4f3595d3d4e9c7724900
+model_size_bytes: 3578220
+model_uuid: m-dfeb9683f15b4f3595d3d4e9c7724900
+prompts: null
+run_id: 6df00b3728104b0899132620600020fe
+utc_time_created: '2025-08-24 01:59:45.589661'

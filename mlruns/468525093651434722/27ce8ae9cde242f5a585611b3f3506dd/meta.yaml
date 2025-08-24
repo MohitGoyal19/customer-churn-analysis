@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/great/OneDrive/Documents/Work/BITS/DMML/customer-churn-pipeline/mlruns/468525093651434722/27ce8ae9cde242f5a585611b3f3506dd/artifacts
+end_time: 1756001047238
+entry_point_name: ''
+experiment_id: '468525093651434722'
+lifecycle_stage: active
+run_id: 27ce8ae9cde242f5a585611b3f3506dd
+run_name: amusing-pig-577
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756001037767
+status: 3
+tags: []
+user_id: great

@@ -1,0 +1,11 @@
+dvc
+feast
+matplotlib
+mlflow
+pandas
+pyarrow
+pymongo
+python-dotenv
+requests
+scikit-learn
+seaborn

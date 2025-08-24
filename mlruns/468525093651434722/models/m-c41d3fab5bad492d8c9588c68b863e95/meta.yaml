@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/great/OneDrive/Documents/Work/BITS/DMML/customer-churn-pipeline/mlruns/468525093651434722/models/m-c41d3fab5bad492d8c9588c68b863e95/artifacts
+creation_timestamp: 1755999323289
+experiment_id: '468525093651434722'
+last_updated_timestamp: 1755999327208
+model_id: m-c41d3fab5bad492d8c9588c68b863e95
+model_type: null
+name: random_forest_model
+source_run_id: 08f79651e0664942842559fb0b0c6b96
+status: 2
+status_message: null

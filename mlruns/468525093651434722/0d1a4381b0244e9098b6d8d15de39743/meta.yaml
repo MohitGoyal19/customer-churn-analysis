@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/great/OneDrive/Documents/Work/BITS/DMML/customer-churn-pipeline/mlruns/468525093651434722/0d1a4381b0244e9098b6d8d15de39743/artifacts
+end_time: 1756000597087
+entry_point_name: ''
+experiment_id: '468525093651434722'
+lifecycle_stage: active
+run_id: 0d1a4381b0244e9098b6d8d15de39743
+run_name: thundering-worm-52
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1756000591927
+status: 3
+tags: []
+user_id: great
