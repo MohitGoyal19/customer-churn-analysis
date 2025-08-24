@@ -44,9 +44,7 @@ def prepare_data(date_str: str):
 	# Standardize all column names to snake_case
 	df = standardize_columns(df)
 
-	# **Assumption**: Your CSV has a target column. Many credit card datasets
-	# use 'Attrition_Flag'. We will rename it to 'target' for clarity.
-	# If your target column has a different name, CHANGE IT HERE.
+	# use 'attrition_flag'. We will rename it to 'target' for clarity.
 	if 'attrition_flag' in df.columns:
 		df.rename(columns={'attrition_flag': 'target'}, inplace=True)
 		# Convert target to binary 0/1
