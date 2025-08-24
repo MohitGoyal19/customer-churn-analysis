@@ -1,5 +1,4 @@
 dvc
-feast
 matplotlib
 mlflow
 pandas
