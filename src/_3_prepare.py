@@ -61,5 +61,3 @@ def prepare_data(date_str: str):
 	df.to_csv(clean_data_path, index=False)
 	logger.info(f'Cleaned and standardized data saved to {clean_data_path}')
 	logger.info('Data preparation task completed.')
-
-prepare_data('2025-08-24')

@@ -38,5 +38,3 @@ def validate_data(date_str: str):
 		raise ValueError('Data validation failed. Halting pipeline.')
 
 	logger.info('Data validation task completed successfully.')
-
-validate_data('2025-08-24')

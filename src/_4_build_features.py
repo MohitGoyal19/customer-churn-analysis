@@ -39,5 +39,3 @@ def build_features(date_str: str):
 	df.to_parquet(feature_data_path, index=False)
 
 	logger.info(f'Feature dataset built and saved to {feature_data_path}')
-
-build_features('2025-08-24')

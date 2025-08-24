@@ -57,5 +57,3 @@ def ingest_data():
 	logger.info('Data ingestion task completed.')
 
 	return date_str
-
-ingest_data()
